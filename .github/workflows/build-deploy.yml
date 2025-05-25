@@ -24,10 +24,11 @@ jobs:
           npm install
           yarn build
 
-      - name: Deploy 🚀
+      - name: Deploy to GitHub Pages 🚀
         uses: JamesIves/github-pages-deploy-action@v4
-        env: # 设置环境变量
-          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }} # toKen私密变量
         with:
-          folder: docs/.vuepress/dist
-          branch: gh-pages # 部署到的分支
+            token: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+            branch: gh-pages
+            folder: docs/.vuepress/dist
+            clean: true
+            force: true
