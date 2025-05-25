@@ -22,21 +22,6 @@ module.exports = [
     },
   ],
   [
-    "vuepress-plugin-vssue-global",
-    {
-      platform: "github",
-      title: "[Comment]<%- frontmatter.title %>",
-      needComments: true,
-      // 其他的 Vssue 配置
-      autoCreateIssue: true,
-      clientId: "adb9fb0ac1159e00ce7f",
-      clientSecret: "27da8dc85f808c2bd1b6e44da5ae69c4ddf17d8d",
-      owner: "liehuf",
-      repo: "liehuf-notes",
-      redirectUri: "https://liehuf.github.io/liehuf-notes/",
-    },
-  ],
-  [
     '@vuepress/last-updated', // "上次更新"时间格式
     {
       transformer: (timestamp, lang) => {
