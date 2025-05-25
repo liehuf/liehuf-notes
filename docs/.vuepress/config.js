@@ -15,22 +15,3 @@ module.exports = {
   plugins,
   themeConfig,
 }
-
-// vssue 评论插件
-  plugins: [
-    [
-      "vuepress-plugin-vssue-global",
-      {
-        platform: "github",
-        title: "[Comment]<%- frontmatter.title %>",
-        needComments: true,
-        // 其他的 Vssue 配置
-        autoCreateIssue: true,
-        clientId: "Ov23liIHWTbxUErIpbmK",
-        clientSecret: "95f92bf987054e3509ed8c30f425716b092e7f09",
-        owner: "liehuf",
-        repo: "liehuf-notes",
-        redirectUri: "https://liehuf.github.io/liehuf-notes/",
-      },
-    ],
-  ]
