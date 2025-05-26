@@ -35,4 +35,21 @@ module.exports = [
       src: "/js/pgmanor-self.js",
     },
   ],
+  [
+    'script',
+    {
+      async: true,
+      src: 'https://www.googletagmanager.com/gtag/js?id=G-LPRG9SPLFF'
+    }
+  ],
+  [
+    'script',
+    {},
+    `
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-LPRG9SPLFF');
+    `
+  ],
 ];
