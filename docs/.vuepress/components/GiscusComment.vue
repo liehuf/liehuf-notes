@@ -1,0 +1,20 @@
+<template>
+  <div class="giscus-wrapper">
+    <script
+      src="https://giscus.app/client.js"
+      data-repo="liehuf/liehuf-notes"
+      data-repo-id="R_kgDOOwFStg"
+      data-category="Announcements"
+      data-category-id="DIC_kwDOOwFSts4Cql5Y"
+      data-mapping="pathname"
+      data-strict="0"
+      data-reactions-enabled="1"
+      data-emit-metadata="0"
+      data-input-position="bottom"
+      data-theme="preferred_color_scheme"
+      data-lang="zh-CN"
+      crossorigin="anonymous"
+      async>
+    </script>
+  </div>
+</template>
