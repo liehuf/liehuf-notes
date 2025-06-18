@@ -59,15 +59,16 @@ module.exports = {
         link: "mailto:17715076182@163.com",
       },
       {
-        iconClass: "icon-gitee",
-        title: "Gitee",
-        link: "https://gitee.com/liehuf/",
-      },
-      {
         iconClass: "icon-csdn",
         title: "CSDN",
         link: "https://blog.csdn.net/liehuf",
       },
+      {
+        iconClass: "icon-zhihu",
+        title: "知乎",
+        link: "https://www.zhihu.com/people/44-97-46-49",
+      }
+      
     ],
   },
   footer: {
