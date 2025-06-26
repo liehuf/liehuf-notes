@@ -1,6 +1,6 @@
 ---
 home: true
-heroImage: /img/head.jpg
+heroImage: /img/LOGO.png
 tagline: 嵌入式与机器视觉技术博客，积跬步以至千里，致敬每个爱学习的你。
 heroText: liehuf-notes
 actionText: 开始浏览 →
