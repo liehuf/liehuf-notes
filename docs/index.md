@@ -15,7 +15,7 @@ features:
     details: RISC-V + AI 边缘计算，平民价也能玩转 YOLO。
     link: /pages/K230/
 
-  - title: Rust 嵌入式
-    details: 用 Rust 重写嵌入式，安全与性能的完美结合。
-    link: /pages/Rust/
+  - title: Verilog + FPGA
+    details: 数电设计，高效器件
+    link: /pages/Verilog/
 ---
