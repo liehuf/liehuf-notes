@@ -2,7 +2,7 @@
 home: true
 heroImage: /img/LOGO.png
 tagline: 单片机与FPGA技术博客，积跬步以至千里，致敬每个爱学习的你。
-heroText: liehuf-notes
+heroText: 原码纪事
 actionText: 开始浏览 →
 actionLink: /pages/Verilog/
 bannerBg: none # auto => 网格纹背景(有bodyBgImg时无背景)，默认 | none => 无 | '大图地址' | background: 自定义背景样式       提示：如发现文本颜色不适应你的背景时可以到palette.styl修改$bannerTextColor变量
@@ -17,5 +17,5 @@ features:
 
   - title: 单片机
     details: 8051 & ARM, 逻辑分析仪在线解析
-    link: /pages/single/
+    link: /pages/Embedded/
 ---
