@@ -18,4 +18,8 @@ features:
   - title: 单片机
     details: 8051 & ARM, 逻辑分析仪在线解析
     link: /pages/Embedded/
+
+  - title: Rust
+    details: 年轻且有力量的 Language
+    link: /pages/Rust/
 ---
