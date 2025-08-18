@@ -1,7 +1,7 @@
 ---
 home: true
 heroImage: /img/LOGO.png
-tagline: 单片机与FPGA技术博客，积跬步以至千里，致敬每个爱学习的你。
+tagline: 系统编程技术博客，积跬步以至千里，致敬每个爱学习的你。
 heroText: 原码纪事
 actionText: 开始浏览 →
 actionLink: /pages/Verilog/
