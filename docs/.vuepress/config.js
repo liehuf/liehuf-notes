@@ -6,7 +6,8 @@ module.exports = {
   theme: 'vdoing', // 使用npm包主题
   title: "liehuf-notes",
   description: 'vdoing博客主题模板',
-  base: '/liehuf-notes/', // 格式：'/<仓库名>/'， 默认'/'
+  base: '/', // 格式：'/<仓库名>/'， 默认'/'
+  //base: '/liehuf-notes/', // 格式：'/<仓库名>/'， 默认'/'
   markdown: {
     lineNumbers: true, // 代码行号
   },
