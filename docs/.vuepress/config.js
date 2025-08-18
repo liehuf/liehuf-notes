@@ -4,7 +4,7 @@ const themeConfig = require('./config/themeConfig.js');
 
 module.exports = {
   theme: 'vdoing', // 使用npm包主题
-  title: "liehuf-notes",
+  title: "原码纪事",
   description: 'vdoing博客主题模板',
   base: '/', // 格式：'/<仓库名>/'， 默认'/'
   //base: '/liehuf-notes/', // 格式：'/<仓库名>/'， 默认'/'
