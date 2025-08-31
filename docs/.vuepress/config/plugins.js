@@ -30,4 +30,16 @@ module.exports = [
       },
     },
   ],
+  // 支持 mermaid 流程图
+  'vuepress-plugin-mermaidjs',
+  // 支持数学公式
+  [
+    'vuepress-plugin-mathjax',
+    {
+      target: 'svg',
+      macros: {
+        '*': '\\times',
+      },
+    },
+  ],
 ]

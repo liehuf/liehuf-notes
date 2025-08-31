@@ -28,4 +28,7 @@
     "busuanzi.pure.js": "^1.0.3",
     "leancloud-storage": "^4.11.1"
   }
-}
+    ,
+    "vuepress-plugin-mermaidjs": "^1.5.0",
+    "vuepress-plugin-mathjax": "^1.2.1"
+  }
