@@ -27,7 +27,7 @@
     "@maginapp/vuepress-plugin-katex": "^1.0.11"
   },
   "dependencies": {
-    "busuanzi.pure.js": "^1.2.1",
+    "busuanzi.pure.js": "^1.0.3",
     "leancloud-storage": "^4.11.1"
   }
     
