@@ -24,7 +24,7 @@
     "vuepress-theme-vdoing": "^1.12.0",
     "yamljs": "^0.3.0",
     "vuepress-plugin-mermaidjs": "^1.5.0",
-    "vuepress-plugin-mathjax": "^1.2.1"
+    "vuepress-plugin-katex": "^1.2.1"
   },
   "dependencies": {
     "busuanzi.pure.js": "^1.0.3",
