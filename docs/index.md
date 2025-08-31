@@ -19,7 +19,7 @@ features:
     details: 年轻且有力量的 Language
     link: /pages/Rust/
 
-  - title: 算法
-    details: 高效完成任务的良药
-    link: /pages/Algo/
+  - title: 深度学习
+    details: 当今人工智能的基底
+    link: /pages/DP/
 ---
