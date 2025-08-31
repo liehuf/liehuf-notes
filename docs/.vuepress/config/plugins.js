@@ -32,11 +32,9 @@ module.exports = [
   ],
   // 支持 mermaid 流程图
   'vuepress-plugin-mermaidjs',
+  
   [
-  'vuepress-plugin-katex',
-  {
-    delimiters: 'dollars',   // 支持 $...$ 和 $$...$$
-    strict: false,           // 避免报错
-  }
-]
+  '@maginapp/vuepress-plugin-katex',
+    { delimiters: 'dollars' }
+  ]
 ]
