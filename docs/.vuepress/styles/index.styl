@@ -846,11 +846,11 @@ pre,code
   display: block
   margin: auto
 
-// 流程图居中
-.theme-vdoing-content
-  .mermaid
-    text-align center
+/* 强制 mermaid 图居中 */
+.theme-vdoing-content .content__default .mermaid
+  display flex
+  justify-content center
 
-  .mermaid svg
-    display block
-    margin: auto
+.theme-vdoing-content .content__default .mermaid svg
+  display block
+  margin 0 auto
