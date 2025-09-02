@@ -74,17 +74,17 @@ export default {
 <style lang="stylus" scoped>
 .floating-social-icons
   position: fixed
-  bottom: 80px
-  right: 20px
+  bottom: 180px  // 在主题模式切换按钮上方，保持间距
+  right: 20px    // 与主题按钮保持相同的右边距
   z-index: 1000
   display: flex
   flex-direction: column
-  gap: 12px
+  gap: 15px      // 与主题按钮间距保持一致
 
 .social-item
   position: relative
-  width: 50px
-  height: 50px
+  width: 40px    // 与主题按钮大小一致
+  height: 40px   // 与主题按钮大小一致
   background: rgba(255, 255, 255, 0.9)
   border-radius: 50%
   display: flex
@@ -101,8 +101,8 @@ export default {
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25)
 
 .social-icon
-  width: 28px
-  height: 28px
+  width: 22px    // 稍微调小图标尺寸，适配40px容器
+  height: 22px
   transition: all 0.3s ease
   
   &.bilibili
@@ -160,20 +160,20 @@ export default {
 // 移动端适配
 @media (max-width: 768px)
   .floating-social-icons
-    bottom: 100px
+    bottom: 160px  // 保持与桌面端相同的布局逻辑
     right: 15px
-    gap: 10px
+    gap: 12px      // 稍微减小间距适配移动端
     
   .social-item
-    width: 45px
-    height: 45px
+    width: 36px    // 稍微减小尺寸适配移动端
+    height: 36px
     
     .social-icon
-      width: 24px
-      height: 24px
+      width: 20px
+      height: 20px
       
   .qr-dropdown
-    right: 55px
+    right: 46px    // 调整二维码位置适配新的按钮尺寸
     padding: 12px
     
     img
@@ -186,19 +186,19 @@ export default {
 // 在特别小的屏幕上调整位置
 @media (max-width: 480px)
   .floating-social-icons
-    bottom: 80px
+    bottom: 140px
     right: 10px
     
   .social-item
-    width: 40px
-    height: 40px
+    width: 32px
+    height: 32px
     
     .social-icon
-      width: 20px
-      height: 20px
+      width: 18px
+      height: 18px
       
   .qr-dropdown
-    right: 50px
+    right: 42px
     padding: 10px
     
     img
