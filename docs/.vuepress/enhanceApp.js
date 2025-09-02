@@ -28,60 +28,25 @@ export default ({
           return
         }
         
-        // 查找导航栏链接容器
-        const navLinks = document.querySelector('.navbar .nav-links')
+        // 简化方案：先添加到导航栏右侧，确保基本功能正常
+        const navbar = document.querySelector('.navbar .links') || 
+                      document.querySelector('.navbar .nav-links')
         
-        if (navLinks) {
-          // 查找所有导航链接
-          const links = navLinks.querySelectorAll('.nav-link')
+        if (navbar) {
+          // 创建容器
+          const socialContainer = document.createElement('div')
+          socialContainer.className = 'nav-social-container'
           
-          // 找到"首页"链接（通常是第一个）和"Verilog"链接
-          let homeLink = null
-          let verilogLink = null
+          // 创建Vue组件实例
+          const NavSocialConstructor = Vue.extend(NavSocialIcons)
+          const instance = new NavSocialConstructor()
+          instance.$mount()
           
-          links.forEach(link => {
-            const text = link.textContent.trim()
-            if (text === '首页') {
-              homeLink = link
-            } else if (text === 'Verilog') {
-              verilogLink = link
-            }
-          })
+          // 添加到容器
+          socialContainer.appendChild(instance.$el)
           
-          // 如果找到了"首页"和"Verilog"链接，则在它们之间插入社交图标
-          if (homeLink && verilogLink) {
-            // 创建容器
-            const socialContainer = document.createElement('div')
-            socialContainer.className = 'nav-social-container'
-            socialContainer.style.display = 'flex'
-            socialContainer.style.alignItems = 'center'
-            socialContainer.style.margin = '0 10px'
-            
-            // 创建Vue组件实例
-            const NavSocialConstructor = Vue.extend(NavSocialIcons)
-            const instance = new NavSocialConstructor()
-            instance.$mount()
-            
-            // 添加到容器
-            socialContainer.appendChild(instance.$el)
-            
-            // 在"Verilog"链接之前插入社交图标
-            verilogLink.parentNode.insertBefore(socialContainer, verilogLink)
-          } else {
-            // 降级方案：添加到导航栏右侧
-            const navbarRight = document.querySelector('.navbar .links')
-            if (navbarRight) {
-              const socialContainer = document.createElement('div')
-              socialContainer.className = 'nav-social-container'
-              
-              const NavSocialConstructor = Vue.extend(NavSocialIcons)
-              const instance = new NavSocialConstructor()
-              instance.$mount()
-              
-              socialContainer.appendChild(instance.$el)
-              navbarRight.appendChild(socialContainer)
-            }
-          }
+          // 添加到导航栏末尾
+          navbar.appendChild(socialContainer)
         }
       }
     }
