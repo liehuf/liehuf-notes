@@ -849,6 +849,25 @@ pre,code
 /* 强制 mermaid 图居中 */
 .theme-vdoing-content .content__default .mermaid
   display flex
+
+/* 导航栏社交图标样式 */
+.nav-social-container
+  display: flex
+  align-items: center
+  margin-left: 15px
+  
+.navbar .links
+  display: flex
+  align-items: center
+  
+/* 确保导航栏社交图标在正确位置 */
+@media (min-width: 719px)
+  .navbar .links .nav-social-container
+    margin-left: 15px
+    
+@media (max-width: 719px)
+  .nav-social-container
+    display: none /* 在移动端隐藏，避免导航栏过于拥挤 */
   justify-content center
 
 .theme-vdoing-content .content__default .mermaid svg

@@ -1,4 +1,6 @@
 // import vue from 'vue/dist/vue.esm.browser'
+import NavSocialIcons from './components/NavSocialIcons.vue'
+
 export default ({
   Vue, // VuePress 正在使用的 Vue 构造函数
   options, // 附加到根实例的一些选项
@@ -6,6 +8,49 @@ export default ({
   siteData // 站点元数据
 }) => {
   // window.Vue = vue // 使页面中可以使用Vue构造函数 （使页面中的vue demo生效）
+  
+  // 全局注册导航栏社交图标组件
+  Vue.component('NavSocialIcons', NavSocialIcons)
+  
+  // 在导航栏加载完成后添加社交图标
+  Vue.mixin({
+    mounted() {
+      if (typeof window !== 'undefined') {
+        this.$nextTick(() => {
+          this.addNavSocialIcons()
+        })
+      }
+    },
+    methods: {
+      addNavSocialIcons() {
+        // 避免重复添加
+        if (document.querySelector('.nav-social-icons')) {
+          return
+        }
+        
+        // 查找导航栏右侧区域
+        const navbar = document.querySelector('.navbar')
+        const navbarRight = document.querySelector('.navbar .links')
+        
+        if (navbar && navbarRight) {
+          // 创建容器
+          const socialContainer = document.createElement('div')
+          socialContainer.className = 'nav-social-container'
+          
+          // 创建Vue组件实例
+          const NavSocialConstructor = Vue.extend(NavSocialIcons)
+          const instance = new NavSocialConstructor()
+          instance.$mount()
+          
+          // 添加到容器
+          socialContainer.appendChild(instance.$el)
+          
+          // 插入到导航栏右侧
+          navbarRight.appendChild(socialContainer)
+        }
+      }
+    }
+  })
 }
 
 // export default ({ router }) => {
