@@ -22,7 +22,7 @@
       </svg>
       <div v-show="qrVisible.bilibili" class="qr-dropdown">
         <img src="/img/bilibili-qr.png" alt="B站二维码" />
-        <p>关注我的B站</p>
+        <p>关注小破站：原码纪事</p>
       </div>
     </div>
 
@@ -43,7 +43,7 @@
       </svg>
       <div v-show="qrVisible.wechat" class="qr-dropdown">
         <img src="/img/wechat-qr.png" alt="微信公众号二维码" />
-        <p>关注我的公众号</p>
+        <p>关注公众号：原码纪事</p>
       </div>
     </div>
   </div>
@@ -74,8 +74,8 @@ export default {
 <style lang="stylus" scoped>
 .floating-social-icons
   position: fixed
-  bottom: 180px  // 在主题模式切换按钮上方，保持间距
-  right: 20px    // 与主题按钮保持相同的右边距
+  bottom: 170px  // 往下移动10px
+  right: 22px    // 往左移动2px
   z-index: 1000
   display: flex
   flex-direction: column
@@ -160,8 +160,8 @@ export default {
 // 移动端适配
 @media (max-width: 768px)
   .floating-social-icons
-    bottom: 160px  // 保持与桌面端相同的布局逻辑
-    right: 15px
+    bottom: 150px  // 往下移动10px
+    right: 17px    // 往左移动2px
     gap: 12px      // 稍微减小间距适配移动端
     
   .social-item
@@ -186,8 +186,8 @@ export default {
 // 在特别小的屏幕上调整位置
 @media (max-width: 480px)
   .floating-social-icons
-    bottom: 140px
-    right: 10px
+    bottom: 130px  // 往下移动10px
+    right: 12px    // 往左移动2px
     
   .social-item
     width: 32px
