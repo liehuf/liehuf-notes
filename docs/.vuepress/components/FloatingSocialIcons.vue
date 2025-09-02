@@ -160,8 +160,8 @@ export default {
 // 移动端适配
 @media (max-width: 768px)
   .floating-social-icons
-    bottom: 142px  // 再往下移动8px（150px - 8px）
-    right: 22px    // 再往左移动5px（17px + 5px）
+    bottom: 157px  // 向上移动15px（142px + 15px）
+    right: 27px    // 向左移动5px（22px + 5px）
     gap: 12px      // 稍微减小间距适配移动端
     
   .social-item
