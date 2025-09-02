@@ -854,20 +854,99 @@ pre,code
 .nav-social-container
   display: flex
   align-items: center
-  margin-left: 15px
+  margin: 0 15px
   
+  .nav-social-icons
+    display: flex
+    align-items: center
+    gap: 12px
+    height: 100%
+    
+    .social-item
+      position: relative
+      display: flex
+      align-items: center
+      height: 100%
+      cursor: pointer
+      padding: 0 6px
+      
+      &:hover
+        .social-icon
+          transform: scale(1.1)
+          
+      .social-icon
+        width: 20px
+        height: 20px
+        transition: all 0.3s ease
+        
+        &.bilibili
+          color: #00a1d6
+          
+        &.wechat
+          color: #1aad19
+        
+      .qr-dropdown
+        position: absolute
+        top: 100%
+        left: 50%
+        transform: translateX(-50%)
+        background: white
+        border: 1px solid #eaecef
+        border-radius: 8px
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1)
+        padding: 16px
+        text-align: center
+        white-space: nowrap
+        z-index: 1000
+        animation: fadeInDown 0.3s ease
+        margin-top: 10px
+        
+        &::before
+          content: ''
+          position: absolute
+          top: -6px
+          left: 50%
+          transform: translateX(-50%)
+          width: 0
+          height: 0
+          border-left: 6px solid transparent
+          border-right: 6px solid transparent
+          border-bottom: 6px solid white
+        
+        img
+          width: 120px
+          height: 120px
+          border-radius: 4px
+          margin-bottom: 8px
+          display: block
+          
+        p
+          margin: 0
+          font-size: 12px
+          color: #666
+          font-weight: 500
+
+/* 确保导航栏中的链接容器正确对齐 */
 .navbar .links
   display: flex
   align-items: center
   
-/* 确保导航栏社交图标在正确位置 */
+/* 响应式适配 */
 @media (min-width: 719px)
   .navbar .links .nav-social-container
-    margin-left: 15px
+    margin: 0 15px
     
 @media (max-width: 719px)
   .nav-social-container
     display: none /* 在移动端隐藏，避免导航栏过于拥挤 */
+
+@keyframes fadeInDown
+  from
+    opacity: 0
+    transform: translateX(-50%) translateY(-10px)
+  to
+    opacity: 1
+    transform: translateX(-50%) translateY(0)
   justify-content center
 
 .theme-vdoing-content .content__default .mermaid svg

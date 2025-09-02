@@ -1,9 +1,24 @@
 <template>
   <div class="nav-social-icons">
-    <!-- B站二维码 -->
+    <!-- B站图标 -->
     <div class="social-item" @mouseenter="showQR('bilibili')" @mouseleave="hideQR('bilibili')">
-      <svg class="social-icon bilibili" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
-        <path d="M306.005333 117.632L444.330667 256h135.296l138.282666-138.325333a42.666667 42.666667 0 0 1 60.373334 60.373333L672.298667 284.032C750.592 302.08 810.666667 372.394667 810.666667 456.533333v341.333334c0 94.208-76.458667 170.666667-170.666667 170.666666H384c-94.208 0-170.666667-76.458667-170.666667-170.666666V456.533333c0-84.138667 60.074667-154.453333 138.368-172.501333L245.632 177.962667a42.666667 42.666667 0 0 1 60.373333-60.330667zM384 341.333333c-63.573333 0-115.2 51.626667-115.2 115.2v341.333334c0 32.554667 26.368 58.922667 58.922667 58.922666H640c32.554667 0 58.922667-26.368 58.922667-58.922666V456.533333c0-63.573333-51.626667-115.2-115.2-115.2H384z m213.333333 213.333334a42.666667 42.666667 0 0 1 0 85.333333h-170.666666a42.666667 42.666667 0 1 1 0-85.333333h170.666666z"/>
+      <svg class="social-icon bilibili" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <!-- 经典B站小电视图标，高辨识度 -->
+        <path d="M6.5 4.5C5.7 4.5 5 5.2 5 6v12c0 .8.7 1.5 1.5 1.5h11c.8 0 1.5-.7 1.5-1.5V6c0-.8-.7-1.5-1.5-1.5h-11z" fill="currentColor"/>
+        <!-- 小电视屏幕 -->
+        <rect x="7" y="7" width="10" height="6" rx="1" fill="white"/>
+        <!-- 经典B站logo的双眼 -->
+        <circle cx="9.5" cy="9.5" r="0.8" fill="#00a1d6"/>
+        <circle cx="14.5" cy="9.5" r="0.8" fill="#00a1d6"/>
+        <!-- 嘴巴 -->
+        <path d="M10.5 11.5c1 0 2 .5 2.5 1h-5c.5-.5 1.5-1 2.5-1z" fill="#00a1d6"/>
+        <!-- 小耳朵天线 -->
+        <circle cx="8" cy="3" r="1" fill="currentColor"/>
+        <circle cx="16" cy="3" r="1" fill="currentColor"/>
+        <path d="M8 4V3M16 4V3" stroke="currentColor" stroke-width="1" stroke-linecap="round"/>
+        <!-- 底部按钮 -->
+        <circle cx="9" cy="16" r="1" fill="white"/>
+        <circle cx="15" cy="16" r="1" fill="white"/>
       </svg>
       <div v-show="qrVisible.bilibili" class="qr-dropdown">
         <img src="/img/bilibili-qr.png" alt="B站二维码" />
@@ -11,11 +26,20 @@
       </div>
     </div>
 
-    <!-- 微信公众号二维码 -->
+    <!-- 微信公众号图标 -->
     <div class="social-item" @mouseenter="showQR('wechat')" @mouseleave="hideQR('wechat')">
-      <svg class="social-icon wechat" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
-        <path d="M690.1 377.4c5.9 0 11.8 0.2 17.6 0.5-15.8-73.3-84.3-128.4-165.3-128.4-90.4 0-165.7 60.7-165.7 137.5 0 44.5 24.2 80.5 60.4 108.8L418 539.2l21.4-10.7c24.1 4.4 42.1 10.7 60.4 10.7 5.3 0 10.6-0.3 15.8-0.7-3.3-11.4-5.2-23.4-5.2-35.8-0.1-76.8 62.5-125.3 179.7-125.3z m-165.8-78.9c14.5 0 24.2 9.7 24.2 24.2s-9.7 24.2-24.2 24.2c-14.5 0-24.2-9.7-24.2-24.2s9.7-24.2 24.2-24.2z m-96.8 48.4c-14.5 0-24.2-9.7-24.2-24.2s9.7-24.2 24.2-24.2 24.2 9.7 24.2 24.2-9.7 24.2-24.2 24.2z"/>
-        <path d="M995.6 642.3c0-60.5-60.4-113.1-133.5-113.1-78.5 0-133.5 52.6-133.5 113.1 0 60.5 55 108.8 133.5 108.8 15.8 0 36.3-5.3 48.4-10.7l42.1 21.4-10.7-36.3c24.2-19.3 53.2-44.5 53.2-83.2z m-177.7-24.2c-9.7 0-19.3-9.7-19.3-19.3 0-9.7 9.7-19.3 19.3-19.3 9.7 0 19.3 9.7 19.3 19.3 0 9.7-9.6 19.3-19.3 19.3z m96.8 0c-9.7 0-19.3-9.7-19.3-19.3 0-9.7 9.7-19.3 19.3-19.3s19.3 9.7 19.3 19.3c0 9.7-9.6 19.3-19.3 19.3z"/>
+      <svg class="social-icon wechat" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <!-- 经典微信双气泡图标，高辨识度 -->
+        <!-- 大气泡 -->
+        <path d="M8.5 5C5.5 5 3 7.2 3 10c0 1.5.7 2.8 2 3.7L4.5 16l2.3-1.2c.6.2 1.2.2 1.8.2.2 0 .4 0 .6-.1-.1-.4-.2-.8-.2-1.2 0-2.8 2.5-5 5.5-5 .2 0 .4 0 .6.1C14.5 6.7 11.8 5 8.5 5z" fill="currentColor"/>
+        <!-- 大气泡眼睛 -->
+        <circle cx="6.5" cy="9.5" r="0.8" fill="white"/>
+        <circle cx="10.5" cy="9.5" r="0.8" fill="white"/>
+        <!-- 小气泡 -->
+        <path d="M14.5 9.5c-2.5 0-4.5 1.7-4.5 3.8s2 3.8 4.5 3.8c.5 0 1-.1 1.4-.3L17.5 18l-.4-1.2c1-.7 1.6-1.7 1.6-2.8 0-2.1-2-3.8-4.5-3.8z" fill="currentColor"/>
+        <!-- 小气泡眼睛 -->
+        <circle cx="13" cy="12.5" r="0.5" fill="white"/>
+        <circle cx="16" cy="12.5" r="0.5" fill="white"/>
       </svg>
       <div v-show="qrVisible.wechat" class="qr-dropdown">
         <img src="/img/wechat-qr.png" alt="微信公众号二维码" />
@@ -51,7 +75,7 @@ export default {
 .nav-social-icons
   display: flex
   align-items: center
-  gap: 16px
+  gap: 12px
   height: 100%
 
 .social-item
@@ -60,6 +84,7 @@ export default {
   align-items: center
   height: 100%
   cursor: pointer
+  padding: 0 6px
 
 .social-icon
   width: 20px
@@ -67,10 +92,10 @@ export default {
   transition: all 0.3s ease
   
   &.bilibili
-    fill: #00a1d6
+    color: #00a1d6
     
   &.wechat
-    fill: #1aad19
+    color: #1aad19
 
 .social-item:hover .social-icon
   transform: scale(1.1)
@@ -78,7 +103,8 @@ export default {
 .qr-dropdown
   position: absolute
   top: 100%
-  right: 0
+  left: 50%
+  transform: translateX(-50%)
   background: white
   border: 1px solid #eaecef
   border-radius: 8px
@@ -88,6 +114,19 @@ export default {
   white-space: nowrap
   z-index: 1000
   animation: fadeInDown 0.3s ease
+  margin-top: 10px
+  
+  &::before
+    content: ''
+    position: absolute
+    top: -6px
+    left: 50%
+    transform: translateX(-50%)
+    width: 0
+    height: 0
+    border-left: 6px solid transparent
+    border-right: 6px solid transparent
+    border-bottom: 6px solid white
   
   img
     width: 120px
@@ -105,25 +144,27 @@ export default {
 @keyframes fadeInDown
   from
     opacity: 0
-    transform: translateY(-10px)
+    transform: translateX(-50%) translateY(-10px)
   to
     opacity: 1
-    transform: translateY(0)
+    transform: translateX(-50%) translateY(0)
 
 // 移动端适配
 @media (max-width: 768px)
   .nav-social-icons
-    gap: 12px
+    gap: 8px
     
-  .social-icon
-    width: 18px
-    height: 18px
+  .social-item
+    padding: 0 4px
     
-  .qr-dropdown
-    right: -20px
-    padding: 12px
-    
-    img
-      width: 100px
-      height: 100px
+    .social-icon
+      width: 18px
+      height: 18px
+      
+    .qr-dropdown
+      padding: 12px
+      
+      img
+        width: 100px
+        height: 100px
 </style>
