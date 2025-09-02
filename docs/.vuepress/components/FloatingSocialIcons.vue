@@ -74,8 +74,8 @@ export default {
 <style lang="stylus" scoped>
 .floating-social-icons
   position: fixed
-  bottom: 170px  // 往下移动10px
-  right: 22px    // 往左移动2px
+  bottom: 162px  // 再往下移动8px（170px - 8px）
+  right: 27px    // 再往左移动5px（22px + 5px）
   z-index: 1000
   display: flex
   flex-direction: column
@@ -160,8 +160,8 @@ export default {
 // 移动端适配
 @media (max-width: 768px)
   .floating-social-icons
-    bottom: 150px  // 往下移动10px
-    right: 17px    // 往左移动2px
+    bottom: 142px  // 再往下移动8px（150px - 8px）
+    right: 22px    // 再往左移动5px（17px + 5px）
     gap: 12px      // 稍微减小间距适配移动端
     
   .social-item
@@ -186,8 +186,8 @@ export default {
 // 在特别小的屏幕上调整位置
 @media (max-width: 480px)
   .floating-social-icons
-    bottom: 130px  // 往下移动10px
-    right: 12px    // 往左移动2px
+    bottom: 122px  // 再往下移动8px（130px - 8px）
+    right: 17px    // 再往左移动5px（12px + 5px）
     
   .social-item
     width: 32px
