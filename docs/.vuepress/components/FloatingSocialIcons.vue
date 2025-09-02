@@ -1,5 +1,5 @@
 <template>
-  <div class="nav-social-icons">
+  <div class="floating-social-icons">
     <!-- B站图标 -->
     <div class="social-item" @mouseenter="showQR('bilibili')" @mouseleave="hideQR('bilibili')">
       <svg class="social-icon bilibili" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -51,7 +51,7 @@
 
 <script>
 export default {
-  name: 'NavSocialIcons',
+  name: 'FloatingSocialIcons',
   data() {
     return {
       qrVisible: {
@@ -72,23 +72,37 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-.nav-social-icons
+.floating-social-icons
+  position: fixed
+  bottom: 80px
+  right: 20px
+  z-index: 1000
   display: flex
-  align-items: center
+  flex-direction: column
   gap: 12px
-  height: 100%
 
 .social-item
   position: relative
+  width: 50px
+  height: 50px
+  background: rgba(255, 255, 255, 0.9)
+  border-radius: 50%
   display: flex
   align-items: center
-  height: 100%
+  justify-content: center
   cursor: pointer
-  padding: 0 6px
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15)
+  transition: all 0.3s ease
+  backdrop-filter: blur(10px)
+  border: 1px solid rgba(255, 255, 255, 0.2)
+
+  &:hover
+    transform: scale(1.1)
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25)
 
 .social-icon
-  width: 20px
-  height: 20px
+  width: 28px
+  height: 28px
   transition: all 0.3s ease
   
   &.bilibili
@@ -97,36 +111,30 @@ export default {
   &.wechat
     color: #1aad19
 
-.social-item:hover .social-icon
-  transform: scale(1.1)
-
 .qr-dropdown
   position: absolute
-  top: 100%
-  left: 50%
-  transform: translateX(-50%)
+  bottom: 0
+  right: 60px
   background: white
   border: 1px solid #eaecef
   border-radius: 8px
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1)
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15)
   padding: 16px
   text-align: center
   white-space: nowrap
-  z-index: 1000
-  animation: fadeInDown 0.3s ease
-  margin-top: 10px
+  animation: slideInLeft 0.3s ease
   
   &::before
     content: ''
     position: absolute
-    top: -6px
-    left: 50%
-    transform: translateX(-50%)
+    top: 50%
+    right: -6px
+    transform: translateY(-50%)
     width: 0
     height: 0
-    border-left: 6px solid transparent
-    border-right: 6px solid transparent
-    border-bottom: 6px solid white
+    border-top: 6px solid transparent
+    border-bottom: 6px solid transparent
+    border-left: 6px solid white
   
   img
     width: 120px
@@ -141,30 +149,59 @@ export default {
     color: #666
     font-weight: 500
 
-@keyframes fadeInDown
+@keyframes slideInLeft
   from
     opacity: 0
-    transform: translateX(-50%) translateY(-10px)
+    transform: translateX(20px)
   to
     opacity: 1
-    transform: translateX(-50%) translateY(0)
+    transform: translateX(0)
 
 // 移动端适配
 @media (max-width: 768px)
-  .nav-social-icons
-    gap: 8px
+  .floating-social-icons
+    bottom: 100px
+    right: 15px
+    gap: 10px
     
   .social-item
-    padding: 0 4px
+    width: 45px
+    height: 45px
     
     .social-icon
-      width: 18px
-      height: 18px
+      width: 24px
+      height: 24px
       
-    .qr-dropdown
-      padding: 12px
+  .qr-dropdown
+    right: 55px
+    padding: 12px
+    
+    img
+      width: 100px
+      height: 100px
       
-      img
-        width: 100px
-        height: 100px
+    p
+      font-size: 11px
+
+// 在特别小的屏幕上调整位置
+@media (max-width: 480px)
+  .floating-social-icons
+    bottom: 80px
+    right: 10px
+    
+  .social-item
+    width: 40px
+    height: 40px
+    
+    .social-icon
+      width: 20px
+      height: 20px
+      
+  .qr-dropdown
+    right: 50px
+    padding: 10px
+    
+    img
+      width: 80px
+      height: 80px
 </style>
