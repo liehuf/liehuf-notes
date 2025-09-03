@@ -21,8 +21,8 @@
         <circle cx="15" cy="16" r="1" fill="white"/>
       </svg>
       <div v-show="qrVisible.bilibili" class="qr-dropdown">
-        <img src="/img/bilibili-qr.png" alt="B站二维码" />
-        <p>关注小破站：原码纪事</p>
+        <img src="/img/base/bilibili-qr.png" alt="B站二维码" />
+        <p>欢迎关注小破站</p>
       </div>
     </div>
 
@@ -42,8 +42,8 @@
         <circle cx="16" cy="12.5" r="0.5" fill="white"/>
       </svg>
       <div v-show="qrVisible.wechat" class="qr-dropdown">
-        <img src="/img/wechat-qr.png" alt="微信公众号二维码" />
-        <p>关注公众号：原码纪事</p>
+        <img src="/img/base/wechat-qr.png" alt="微信公众号二维码" />
+        <p>欢迎关注公众号</p>
       </div>
     </div>
   </div>

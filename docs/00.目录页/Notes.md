@@ -1,10 +1,12 @@
 ---
-title: Verilog
+title: Notes
 date: 2025-07-08 11:41:49
-permalink: /pages/Verilog/
+permalink: /pages/Notes/
 ---
 
-# Verilog
+# 博客文章
+
+## Verilog
 
 - [01.Verilog HDL语言基本要素](/pages/Verilog_01/)
 - [02.Verilog HDL基本数据类型](/pages/Verilog_02/)
@@ -25,6 +27,37 @@ permalink: /pages/Verilog/
 - [17.Verilog HDL时序逻辑电路之移位寄存器](/pages/Verilog_17/)
 - [18.Verilog HDL时序逻辑电路之信号发生器](/pages/Verilog_18/)
 - [19.Verilog HDL有限状态机（FSM）设计基础](/pages/Verilog_19/)
+---
+
+## Rust
+
+- [00.Rust的基本素养](/pages/Rust_00/)
+- [01.Rust的变量与可变性](/pages/Rust_01/)
+- [02.Rust的数据类型](/pages/Rust_02)
+- [03.Rust的函数和注释](/pages/Rust_03/)
+- [04.Rust的控制流](/pages/Rust_04/)
+- [05.Rust的所有权概念](/pages/Rust_05/)
+- [06.Rust的引用和借用](/pages/Rust_06/)
+- [07.Rust的Slice类型](/pages/Rust_07/)
+- [08.Rust的结构体类型](/pages/Rust_08/)
+- [09.Rust的结构体的打印与调试](pages/Rust_09/)
+- [10.Rust的方法](pages/Rust_10/)
+- [11.Rust的枚举](pages/Rust_11/)
+- [12.Rust的match控制流结构](pages/Rust_12/)
+- [13.Rust的语法糖-iflet](/pages/Rust_13/)
+- [14.Rust的模块系统](/pages/Rust_14/)
+- [15.Rust的Vector](/pages/Rust_15/)
+- [16.Rust的String类型基本原理](/pages/Rust_16/)
+- [17.Rust的HashMap](/pages/Rust_17/)
+- [18.Rust基础部分的学习总结](pages/Rust_18)
+
+---
+
+## deep learning
+
+- [00.深度学习的基本原理](/pages/DP_00/)
+
+
 ---
 
 **[留言板](/message-board)** 
