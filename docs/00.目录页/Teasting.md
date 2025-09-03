@@ -1,5 +1,5 @@
 ---
-title: Rust
+title: 吐槽
 date: 2025-08-17 21:35:00
 permalink: /pages/Teasting/
 ---

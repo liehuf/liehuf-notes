@@ -1,10 +1,10 @@
 ---
-title: Notes
+title: 博客笔记
 date: 2025-07-08 11:41:49
 permalink: /pages/Notes/
 ---
 
-# 博客文章
+# 博客笔记
 
 ## Verilog
 
