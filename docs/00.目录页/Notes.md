@@ -53,12 +53,4 @@ permalink: /pages/Notes/
 
 ---
 
-## deep learning
-
-- [00.深度学习的基本原理](/pages/DP_00/)
-- [01.线性回归](/pages/DP_01/)
-- [02.SoftMax回归](/pages/DP_02)
-
----
-
 **[留言板](/message-board)** 
