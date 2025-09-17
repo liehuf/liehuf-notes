@@ -6,7 +6,7 @@ permalink: /pages/Notes/
 
 # 博客笔记
 
-## Verilog
+## Verilog 硬件描述语言
 
 - [01.Verilog HDL语言基本要素](/pages/Verilog_01/)
 - [02.Verilog HDL基本数据类型](/pages/Verilog_02/)
@@ -28,6 +28,14 @@ permalink: /pages/Notes/
 - [18.Verilog HDL时序逻辑电路之信号发生器](/pages/Verilog_18/)
 - [19.Verilog HDL有限状态机（FSM）设计基础](/pages/Verilog_19/)
 ---
+
+## deeplearning 简明 notes
+
+- [01.线性回归](/pages/DP_01/)
+- [02.SoftMax回归](/pages/DP_02/)
+- [03.多层感知机](/pages/DP_03/)
+- [04.卷积神经网络](/pages/DP_04/)
+- [05.LeNet](/pages/DP_05/)
 
 ## Rust
 
