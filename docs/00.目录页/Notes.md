@@ -6,6 +6,10 @@ permalink: /pages/Notes/
 
 # 博客笔记
 
+## Linux Embedded
+- [00.嵌入式Linux简明学习路线](/pages/Linux_00/)
+- [01.Linux系统的常用命令](/pages/Linux_01/)
+
 ## Verilog HDL
 
 - [01.Verilog HDL语言基本要素](/pages/Verilog_01/)
@@ -28,9 +32,6 @@ permalink: /pages/Notes/
 - [18.Verilog HDL时序逻辑电路之信号发生器](/pages/Verilog_18/)
 - [19.Verilog HDL有限状态机（FSM）设计基础](/pages/Verilog_19/)
 ---
-
-## Linux Embedded
--[01.Linux系统的常用命令](/pages/Linux_01/)
 
 ## deeplearning simple notes
 
