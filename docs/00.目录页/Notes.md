@@ -9,6 +9,7 @@ permalink: /pages/Notes/
 ## Linux Embedded
 - [00.嵌入式Linux简明学习路线](/pages/Linux_00/)
 - [01.Linux系统的常用命令](/pages/Linux_01/)
+- [02.Shell的变量](/pages/Linux_02/)
 
 ## Verilog HDL
 
