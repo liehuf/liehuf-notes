@@ -6,4 +6,6 @@ permalink: /pages/Teasting/
 
 # 吐槽
 
+- [01.可恶的wifi频段](/pages/Teasting_01/)
+
 **[留言板](/message-board)** 
