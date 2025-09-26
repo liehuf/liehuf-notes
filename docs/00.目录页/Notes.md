@@ -9,7 +9,7 @@ permalink: /pages/Notes/
 ## Enhanced Python
 
 - [01.numpy 模块](/pages/Python_01/)
-- [02.numpy 模块](/pages/Python_02/)
+- [02.pandas 模块](/pages/Python_02/)
 ---
 
 ## Linux for circuitors
