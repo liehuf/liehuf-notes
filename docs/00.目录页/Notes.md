@@ -6,6 +6,12 @@ permalink: /pages/Notes/
 
 # 博客笔记
 
+## enhanced python
+
+- [01.numpy 模块](/pages/Python_01/)
+- [02.numpy 模块](/pages/Python_02/)
+---
+
 ## Linux for circuitors
 
 - [01.Linux 的常用命令](/pages/Linux_01/)
