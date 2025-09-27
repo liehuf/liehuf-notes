@@ -10,6 +10,7 @@ permalink: /pages/Notes/
 
 - [01.numpy 模块](/pages/Python_01/)
 - [02.pandas 模块](/pages/Python_02/)
+- [03.matplotlib 模块](/pages/Python_03/)
 ---
 
 ## Linux for circuitors
