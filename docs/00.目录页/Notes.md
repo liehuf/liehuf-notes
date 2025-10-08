@@ -6,7 +6,10 @@ permalink: /pages/Notes/
 
 # 博客笔记
 
-## Enhanced Python
+## Advanced C
+- [01.C语言的编译过程](/pages/C_01/)
+
+## Advanced Python
 
 - [01.numpy 模块](/pages/Python_01/)
 - [02.pandas 模块](/pages/Python_02/)
