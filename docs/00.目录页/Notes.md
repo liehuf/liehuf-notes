@@ -8,6 +8,8 @@ permalink: /pages/Notes/
 
 ## Advanced C
 - [01.C语言的编译过程](/pages/C_01/)
+- [02.指针的高阶用法](/pages/C_02/)
+---
 
 ## Advanced Python
 
