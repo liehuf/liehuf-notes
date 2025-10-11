@@ -10,6 +10,7 @@ permalink: /pages/Notes/
 - [01.C语言的编译过程](/pages/C_01/)
 - [02.指针的高阶用法](/pages/C_02/)
 - [03.链表](/pages/C_03/)
+- [04.快速排序](/pages/C_04/)
 ---
 
 ## Advanced Python
