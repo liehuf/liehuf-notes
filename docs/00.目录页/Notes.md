@@ -11,6 +11,7 @@ permalink: /pages/Notes/
 - [02.指针的高阶用法](/pages/C_02/)
 - [03.链表](/pages/C_03/)
 - [04.快速排序](/pages/C_04/)
+- [05.C 语言的可变参数](/pages/C_05/)
 ---
 
 ## Advanced Python
