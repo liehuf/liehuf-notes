@@ -12,6 +12,7 @@ permalink: /pages/Notes/
 - [03.链表](/pages/C_03/)
 - [04.快速排序](/pages/C_04/)
 - [05.C 语言的可变参数](/pages/C_05/)
+- [06.C语言动态内存管理](/pages/C_06/)
 ---
 
 ## Advanced Python
