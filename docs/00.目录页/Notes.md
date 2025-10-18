@@ -8,11 +8,14 @@ permalink: /pages/Notes/
 
 ## Advanced C
 - [01.C语言的编译过程](/pages/C_01/)
-- [02.指针的高阶用法](/pages/C_02/)
-- [03.链表](/pages/C_03/)
-- [04.快速排序](/pages/C_04/)
-- [05.C 语言的可变参数](/pages/C_05/)
+- [02.C语言的输入输出](/pages/C_02/)
+- [03.C语言的字符串](/pages/C_03/)
+- [04.C语言的结构体和共用体](/pages/C_04/)
+- [05.C语言的可变参数](/pages/C_05/)
 - [06.C语言动态内存管理](/pages/C_06/)
+- [07.C语言文件操作](/pages/C_07/)
+- [08.C语言的位操作](/pages/C_08/)
+
 ---
 
 ## Advanced Python
