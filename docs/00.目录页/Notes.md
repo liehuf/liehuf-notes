@@ -6,6 +6,9 @@ permalink: /pages/Notes/
 
 # 博客笔记
 
+## Chip Verification
+- [01.testBench的编写规范](/pages/TB_01/)
+
 ## Advanced C
 - [01.C语言的编译过程](/pages/C_01/)
 - [02.C语言的输入输出](/pages/C_02/)
