@@ -6,9 +6,6 @@ permalink: /pages/Notes/
 
 # 博客笔记
 
-## Chip Verification
-- [01.testBench的编写规范](/pages/TB_01/)
-
 ## Advanced C
 - [01.C语言的编译过程](/pages/C_01/)
 - [02.C语言的输入输出](/pages/C_02/)
@@ -56,6 +53,7 @@ permalink: /pages/Notes/
 - [17.Verilog HDL时序逻辑电路之移位寄存器](/pages/Verilog_17/)
 - [18.Verilog HDL时序逻辑电路之信号发生器](/pages/Verilog_18/)
 - [19.Verilog HDL有限状态机（FSM）设计基础](/pages/Verilog_19/)
+- [20.testBench的编写规范](/pages/Verilog_20/)
 ---
 
 ## deeplearning simple notes
@@ -65,6 +63,7 @@ permalink: /pages/Notes/
 - [03.多层感知机](/pages/DP_03/)
 - [04.卷积神经网络](/pages/DP_04/)
 - [05.LeNet](/pages/DP_05/)
+---
 
 ## Rust
 
