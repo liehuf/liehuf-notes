@@ -44,7 +44,7 @@ permalink: /pages/Notes/
 - [HDL 07.testBench的编写规范](/pages/Verilog_7/)
 ---
 
-## deeplearning simple notes
+## Neural Networks
 
 - [NN 01.线性回归](/pages/NN_01/)
 - [NN 02.SoftMax回归](/pages/NN_02/)
