@@ -14,9 +14,6 @@ permalink: /pages/Notes/
 
 ## Neural Networks 
 
-- [NN 01.线性回归](/pages/NN_01/)
-- [NN 02.多层感知机](/pages/NN_02/)
-- [NN 03.卷积神经网络](/pages/NN_03/)
 ---
 
 **[留言板](/message-board)** 
