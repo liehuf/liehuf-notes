@@ -13,6 +13,7 @@ permalink: /pages/Notes/
 ---
 
 ## Neural Networks 
+- [NN 01. 关于线性网络的研究和记录](/pages/NN_01)
 
 ---
 
