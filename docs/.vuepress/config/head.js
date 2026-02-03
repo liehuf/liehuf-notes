@@ -5,7 +5,8 @@ module.exports = [
     "link",
     {
       rel: "icon",
-      href: "https://cdn.jsdelivr.net/gh/eryajf/tu/img/image_20220720_132133.ico",
+      href: "/img/base/favicon.ico"
+      //href: "https://cdn.jsdelivr.net/gh/eryajf/tu/img/image_20220720_132133.ico",
     },
   ], //favicons，资源放在public文件夹
   [
