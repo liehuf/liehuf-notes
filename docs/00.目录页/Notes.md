@@ -12,6 +12,12 @@ permalink: /pages/Notes/
 - [03.testBench的编写规范](/pages/Verilog_03/)
 ---
 
+## FPGA
+- [FPGA 01.一次最小的FPGA工程构建-从闪烁到流水](/pages/FPGA_01/)
+- [FPGA 02.按键不是输入信号，而是一段时间——一次关于消抖的记录](/pages/FPGA_02/)
+
+---
+
 ## Neural Networks 
 - [NN 01. 关于线性网络的研究和记录](/pages/NN_01/)
 - [NN 02.若干损失函数的研究](/pages/NN_02/)
