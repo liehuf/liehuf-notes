@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>FPGA 02.按键不是输入信号，而是一段时间——一次关于消抖的记录 | 原码纪事</title>
+    <meta name="generator" content="VuePress 1.8.0">
+    <link rel="icon" href="/img/base/favicon.ico">
+    <script language="javascript" type="text/javascript" src="/js/pgmanor-self.js"></script>
+    <script async="true" src="https://www.googletagmanager.com/gtag/js?id=G-LPRG9SPLFF"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-LPRG9SPLFF');
+    </script>
+    <meta name="description" content="vdoing博客主题模板">
+    <meta name="keywords" content="猎户f,golang,vue,go-web,go-admin,go-ldap-admin">
+    <meta name="theme-color" content="#11a8cd">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    
+    <link rel="preload" href="/assets/css/0.styles.e44029f7.css" as="style"><link rel="preload" href="/assets/js/app.3213a207.js" as="script"><link rel="preload" href="/assets/js/2.e2bf2c87.js" as="script"><link rel="preload" href="/assets/js/19.b2cd9a49.js" as="script"><link rel="prefetch" href="/assets/js/10.0302174d.js"><link rel="prefetch" href="/assets/js/11.95e66572.js"><link rel="prefetch" href="/assets/js/12.02a4c08a.js"><link rel="prefetch" href="/assets/js/13.c6cff0d9.js"><link rel="prefetch" href="/assets/js/14.20aa7c6d.js"><link rel="prefetch" href="/assets/js/15.350f58ce.js"><link rel="prefetch" href="/assets/js/16.05e6aae6.js"><link rel="prefetch" href="/assets/js/17.9bcfd6f2.js"><link rel="prefetch" href="/assets/js/18.eca2e313.js"><link rel="prefetch" href="/assets/js/20.bf7f3457.js"><link rel="prefetch" href="/assets/js/21.dce811ef.js"><link rel="prefetch" href="/assets/js/22.dfede933.js"><link rel="prefetch" href="/assets/js/23.02d55828.js"><link rel="prefetch" href="/assets/js/3.9e8743ce.js"><link rel="prefetch" href="/assets/js/4.a8f5cda8.js"><link rel="prefetch" href="/assets/js/5.0ce0fe6f.js"><link rel="prefetch" href="/assets/js/6.d3b4ce40.js"><link rel="prefetch" href="/assets/js/7.fd06989b.js"><link rel="prefetch" href="/assets/js/8.e2c5cf45.js"><link rel="prefetch" href="/assets/js/9.5eb1580a.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.e44029f7.css">
+  </head>
+  <body class="theme-mode-light">
+    <div id="app" data-server-rendered="true"><div class="theme-container sidebar-open have-rightmenu"><header class="navbar blur"><div title="目录" class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/img/base/bar.png" alt="原码纪事" class="logo"> <span class="site-name can-hide">原码纪事</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">首页</a></div><div class="nav-item"><a href="/pages/Notes/" class="nav-link">博客笔记</a></div><div class="nav-item"><a href="/pages/Projects/" class="nav-link">工程</a></div><div class="nav-item"><a href="/pages/Teasting/" class="nav-link">吐槽</a></div><div class="nav-item"><a href="/message-board/" class="nav-link">留言板</a></div><div class="nav-item"><a href="https://blog.yuanmajishi.top/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  我的博客
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <div class="sidebar-hover-trigger"></div> <aside class="sidebar" style="display:none;"><!----> <nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">首页</a></div><div class="nav-item"><a href="/pages/Notes/" class="nav-link">博客笔记</a></div><div class="nav-item"><a href="/pages/Projects/" class="nav-link">工程</a></div><div class="nav-item"><a href="/pages/Teasting/" class="nav-link">吐槽</a></div><div class="nav-item"><a href="/message-board/" class="nav-link">留言板</a></div><div class="nav-item"><a href="https://blog.yuanmajishi.top/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  我的博客
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav>  <ul class="sidebar-links"><li><a href="/pages/FPGA_01/" class="sidebar-link">FPGA 01.一次最小的FPGA工程构建-从闪烁到流水</a></li><li><a href="/pages/FPGA_02/" aria-current="page" class="active sidebar-link">FPGA 02.按键不是输入信号，而是一段时间——一次关于消抖的记录</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header level2"><a href="/pages/FPGA_02/#一、为什么一定要消抖" class="sidebar-link">一、为什么一定要消抖</a></li><li class="sidebar-sub-header level2"><a href="/pages/FPGA_02/#二、可以不用怀疑的消抖模型图" class="sidebar-link">二、可以不用怀疑的消抖模型图</a></li><li class="sidebar-sub-header level2"><a href="/pages/FPGA_02/#三、可复用的代码" class="sidebar-link">三、可复用的代码</a></li><li class="sidebar-sub-header level2"><a href="/pages/FPGA_02/#四、总结" class="sidebar-link">四、总结</a></li></ul></li></ul> </aside> <div><main class="page"><div class="theme-vdoing-wrapper "><div class="articleInfo-wrap" data-v-06225672><div class="articleInfo" data-v-06225672><ul class="breadcrumbs" data-v-06225672><li data-v-06225672><a href="/" title="首页" class="iconfont icon-home router-link-active" data-v-06225672></a></li> <li data-v-06225672><span data-v-06225672>FPGA</span></li></ul> <div class="info" data-v-06225672><div title="作者" class="author iconfont icon-touxiang" data-v-06225672><a href="https://github.com/liehuf/" target="_blank" title="作者" class="beLink" data-v-06225672>猎户f</a></div> <div title="创建时间" class="date iconfont icon-riqi" data-v-06225672><a href="javascript:;" data-v-06225672>2026-02-04</a></div> <!----></div></div></div> <!----> <div class="content-wrapper"><div class="right-menu-wrapper"><div class="right-menu-margin"><div class="right-menu-title">目录</div> <div class="right-menu-content"></div></div></div> <h1><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAABKFJREFUSA3tVl1oFVcQnrMbrak3QUgkya1akpJYcrUtIqW1JvFBE9LiQ5v6JmJpolbMg32rVrhgoYK0QiMY6i9Y6EMaW5D+xFJaTYItIuK2Kr3+BJNwkxBj05sQY3b3nM6cs2dv9t7NT/vQJw/sndk5M/PNzJkzewGerP+pAmy+ON8lLzUJgA8ZYxYIYZmGYRnctDaWvJJAmTtfP1pvXsBCCPP8QFcCaRkZYACgDZFO4stNIcBCajEOlmmC9XpJ9bAGCaPaPmzPl32dvLSVu3BWCTQs0XQQ6g0DYgwLIoAZbBCdW/i+781o1VVlm/410mw4h06Y7bIPHNyWDyL4FHkX03Q8SrzNhZTZriieckWt7cL6MM85YcLpsi/7O9/iXFT6MswI0DmmpkSaJ0qLxFIm3+i1THHB3zmBH3PYx9CcykcLOeQVVa7QtdxTgQgEleX2AjHYfwA+2ddV77ruGoJUbhGDI09YSNXyMpUt5ylOzxgbUmtOp7NmbNt8v3arjTBfYELmLUV+M+nSawNNAUqpT3ClJWg5I3BLT+cGW/DXNGCa6tx1aakCGEigArTn4TDIPdrXXYKCZNrHLMCOEPvHBlLQ99s9eHB7EB6NTki73CVPQ2F5MSx/uRQixfmq7rK0wYD8w8E905bnPDfwoWs/rfv93NWN/ZfvwsLIU7A09gxECyISeGJkHAau98L97tuw7NXnoPyNF8FcYGLGKsOs0mN3OEyec9esGW/ZEl945dTP34wlR2FZVQWU1q0Cw8Tr7p+hgLLNL0FPxx/Q35mA8aEUrH6nCgwEl0tn7wUiZYJnNRh6DK4UH/k0lfyrsBKdPVv/AriGIQcEDQZ65LBAGe2Rzui9Ybjz7XUppz1/uKBbyVPGkN3ZAeC6hr0x7Nr38N5+EqkoOm17xpoqR9ohQF55ERSvr4Dkr3chNfC3DMzGJlNBElW8w9nsGQvhNGIzDkXzCg8cLK951xHsFBlTJspJNi3ZFIMF2AeDV3q8DNOB+YHi6QTrChDIWDBRi5U5f+ZMfJLu3ccrqxtdxk4SKH336LFxSmkqefwU5T8fhdSdQf9IVKD6aNiwI/hnmcAZ91isYMJIaCUCx9W098+LgruikeTqzqqxKPUwqJyCPJiyemVVZBOijDGjD38Os0jOiSPL1z3SPjXNANbiNPXAdzTfukjjuknNBbyz3nwgTd3AVFqUJ5hpHlq9MveLnWwttUfoygBmvVjuikxND3znrhsELnZk7k+OjIGxeNEkomyLVta0xxn+HZhjBc4YZ/AFjHjz9u3xRZl2BN4aq9nFwWh16IrQ1aHHEd3j1+4/dB9OtH4e29A2H1DyHQRmOSfQZ1Fy7MHBTGB6J/Djq6p3OxyO2cB+4Car7v/o3GXgfAkj23+x9ID1Teoamo/SXcbvSf2PX7Vc8DdCmE1vN9di+32P9/5YR3vLnhCVGUWBjEkr3yh4H8v9CzmsbdhzOKzsJKM90iFdaTMjRPhGVsakRvOaRidljo6H6G7j+ctrJpsP+4COhDIl0La2+FS4+5mlocBaXY5QnGZysIBYoeSsl5qQzrSj/cgNrfuEzlWBfwA+EjrZyWUvpAAAAABJRU5ErkJggg==">FPGA 02.按键不是输入信号，而是一段时间——一次关于消抖的记录<!----></h1> <!----> <div class="theme-vdoing-content content__default"><p>在 FPGA 里面，按键并不是一个理想的 0 或 1，<br>
+而是一段在时间轴上持续抖动的电平变化。</p> <p>通常认为，机械按键在<strong>按下</strong>和<strong>松开</strong>两个瞬间，<br>
+都会各自产生大约 10ms 左右的抖动。</p> <hr> <h2 id="一、为什么一定要消抖"><a href="#一、为什么一定要消抖" class="header-anchor">#</a> 一、为什么一定要消抖</h2> <p>如果不对按键进行消抖，那么输入信号就会在极短时间内反复变化。<br>
+体现在波形图上，就是 <strong>key 那一条线跳得比 clk 还勤快</strong>。</p> <p>如果不消抖，这些变化会被原样送入状态机。<br>
+于是状态机会开始频繁、不可预测地切换状态。</p> <p>此时如果状态机有嘴，它大概会说一句：</p> <blockquote><p>“哈基键，你这家伙……”</p></blockquote> <hr> <h2 id="二、可以不用怀疑的消抖模型图"><a href="#二、可以不用怀疑的消抖模型图" class="header-anchor">#</a> 二、可以不用怀疑的消抖模型图</h2> <div class="language-text line-numbers-mode"><pre class="language-text"><code>电平
+ 1 ────────────────┐      ┌─┐ ┌─┐ ┌──────────────
+                   │      │ │ │ │ │
+                   │      │ │ │ │ │ ← 松开抖动（≈10ms）
+ 0                 └──────┘ └─┘ └─┘                      
+                        ← 按下抖动（≈10ms）
+时间 ────────────────────────────────────────────────▶
+                       ↑
+                    按下
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br></div></div><p>上面的 ASCII 图并不追求美观，
+但表达的是同一个事实：</p> <p><strong>按键在由 1→0（按下）和 0→1（松开）时，
+都会经历一段持续数毫秒的抖动区间。</strong></p> <p>因此，按键更合理的理解方式不是“某一时刻的电平”，
+而是“一段时间内是否已经稳定”。</p> <h2 id="三、可复用的代码"><a href="#三、可复用的代码" class="header-anchor">#</a> 三、可复用的代码</h2> <div class="language-verilog line-numbers-mode"><pre class="language-verilog"><code><span class="token constant">`timescale</span> <span class="token number">1</span>ns <span class="token operator">/</span> <span class="token number">1</span>ps
+
+<span class="token comment">// 多按键通用消抖模块</span>
+<span class="token comment">// 支持参数化配置按键数量和消抖延时，可直接复用</span>
+<span class="token keyword">module</span> btn_deb #<span class="token punctuation">(</span>
+    <span class="token keyword">parameter</span> BTN_WIDTH <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">,</span>        <span class="token comment">// 按键数量（默认 1 个）</span>
+    <span class="token keyword">parameter</span> BTN_DELAY <span class="token operator">=</span> <span class="token number">800_000</span>   <span class="token comment">// 消抖延时（clk 计数个数，50MHz 时约 16ms）</span>
+<span class="token punctuation">)</span><span class="token punctuation">(</span>
+    <span class="token keyword">input</span>                      clk<span class="token punctuation">,</span>      <span class="token comment">// 系统时钟</span>
+    <span class="token keyword">input</span>  <span class="token punctuation">[</span>BTN_WIDTH<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">:</span><span class="token number">0</span><span class="token punctuation">]</span>     btn_in<span class="token punctuation">,</span>   <span class="token comment">// 原始按键输入（未消抖）</span>
+    <span class="token keyword">output</span> <span class="token keyword">reg</span> <span class="token punctuation">[</span>BTN_WIDTH<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">:</span><span class="token number">0</span><span class="token punctuation">]</span> btn_deb   <span class="token comment">// 消抖后的稳定输出</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 每个按键独立的计数器</span>
+<span class="token keyword">reg</span> <span class="token punctuation">[</span><span class="token number">19</span><span class="token punctuation">:</span><span class="token number">0</span><span class="token punctuation">]</span> cnt <span class="token punctuation">[</span>BTN_WIDTH<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">:</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 抖动标志：1 表示当前处于抖动期</span>
+<span class="token keyword">reg</span> <span class="token punctuation">[</span>BTN_WIDTH<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">:</span><span class="token number">0</span><span class="token punctuation">]</span> jitter_flag<span class="token punctuation">;</span>
+
+<span class="token comment">// 输入打一拍，用于检测电平变化</span>
+<span class="token keyword">reg</span> <span class="token punctuation">[</span>BTN_WIDTH<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">:</span><span class="token number">0</span><span class="token punctuation">]</span> btn_in_d<span class="token punctuation">;</span>
+
+<span class="token comment">//-----------------------------------------------------</span>
+<span class="token comment">// 输入同步：捕获前一拍按键电平</span>
+<span class="token important">always @</span><span class="token punctuation">(</span><span class="token keyword">posedge</span> clk<span class="token punctuation">)</span> <span class="token keyword">begin</span>
+    btn_in_d <span class="token operator">&lt;=</span> btn_in<span class="token punctuation">;</span>
+<span class="token keyword">end</span>
+
+<span class="token comment">//-----------------------------------------------------</span>
+<span class="token comment">// 为每一个按键生成独立的消抖逻辑</span>
+<span class="token keyword">genvar</span> i<span class="token punctuation">;</span>
+<span class="token keyword">generate</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span>i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> BTN_WIDTH<span class="token punctuation">;</span> i <span class="token operator">=</span> i <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token keyword">begin</span> <span class="token punctuation">:</span> DEB_ONE_KEY
+
+        <span class="token comment">// 抖动期判断：检测到电平变化则进入抖动期</span>
+        <span class="token important">always @</span><span class="token punctuation">(</span><span class="token keyword">posedge</span> clk<span class="token punctuation">)</span> <span class="token keyword">begin</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>btn_in_d<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">^</span> btn_in<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span>
+                jitter_flag<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">&lt;=</span> <span class="token number">1'b1</span><span class="token punctuation">;</span>
+            <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>cnt<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">==</span> BTN_DELAY<span class="token punctuation">)</span>
+                jitter_flag<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">&lt;=</span> <span class="token number">1'b0</span><span class="token punctuation">;</span>
+        <span class="token keyword">end</span>
+
+        <span class="token comment">// 抖动计数器：抖动期计数，稳定期清零</span>
+        <span class="token important">always @</span><span class="token punctuation">(</span><span class="token keyword">posedge</span> clk<span class="token punctuation">)</span> <span class="token keyword">begin</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>jitter_flag<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span>
+                cnt<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">&lt;=</span> <span class="token number">20'd0</span><span class="token punctuation">;</span>
+            <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>cnt<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">==</span> BTN_DELAY<span class="token punctuation">)</span>
+                cnt<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">&lt;=</span> <span class="token number">20'd0</span><span class="token punctuation">;</span>
+            <span class="token keyword">else</span>
+                cnt<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">&lt;=</span> cnt<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">+</span> <span class="token number">1'b1</span><span class="token punctuation">;</span>
+        <span class="token keyword">end</span>
+
+        <span class="token comment">// 输出逻辑：抖动期保持原值，稳定后更新</span>
+        <span class="token important">always @</span><span class="token punctuation">(</span><span class="token keyword">posedge</span> clk<span class="token punctuation">)</span> <span class="token keyword">begin</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>jitter_flag<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span>
+                btn_deb<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">&lt;=</span> btn_in<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
+            <span class="token keyword">else</span>
+                btn_deb<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">&lt;=</span> btn_deb<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token keyword">end</span>
+
+    <span class="token keyword">end</span>
+<span class="token keyword">endgenerate</span>
+
+<span class="token keyword">endmodule</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br><span class="line-number">59</span><br><span class="line-number">60</span><br><span class="line-number">61</span><br><span class="line-number">62</span><br><span class="line-number">63</span><br><span class="line-number">64</span><br></div></div><hr> <h2 id="四、总结"><a href="#四、总结" class="header-anchor">#</a> 四、总结</h2> <p>这一节只记录按键相关内容，与 LED 实验刻意分开。</p> <p>从工程角度来看，按键消抖逻辑可以粗略理解为两句话：</p> <ul><li><strong>时间还没到，不管你怎么抖，我都不认</strong></li> <li><strong>时间到了，你现在稳不稳，我就认你现在的状态</strong></li></ul> <p>本质上，这不是对电平的判断，
+而是对<strong>时间稳定性的判断</strong>。</p></div></div> <!----> <div class="page-edit"><!----> <!----> <div class="last-updated"><span class="prefix">上次更新:</span> <span class="time">2026/02/04, 14:10:31</span></div></div> <div class="page-nav-wapper"><div class="page-nav-centre-wrap"><a href="/pages/FPGA_01/" class="page-nav-centre page-nav-centre-prev"><div class="tooltip">FPGA 01.一次最小的FPGA工程构建-从闪烁到流水</div></a> <!----></div> <div class="page-nav"><p class="inner"><span class="prev">
+        ←
+        <a href="/pages/FPGA_01/" class="prev">FPGA 01.一次最小的FPGA工程构建-从闪烁到流水</a></span> <!----></p></div></div></div> <!----></main></div> <div class="footer"><div class="icons"><a href="https://github.com/liehuf" title="GitHub" target="_blank" class="iconfont icon-github"></a><a href="mailto:17715076182@163.com" title="发邮件" target="_blank" class="iconfont icon-youjian"></a><a href="https://blog.csdn.net/liehuf" title="CSDN" target="_blank" class="iconfont icon-csdn"></a><a href="https://www.zhihu.com/people/44-97-46-49" title="知乎" target="_blank" class="iconfont icon-zhihu"></a></div> 
+  Theme by
+  <a href="https://github.com/xugaoyi/vuepress-theme-vdoing" target="_blank" title="本站主题">Vdoing</a> 
+    | Copyright © 2025-2026
+    <span>liehuf | <a href="https://github.com/liehuf/liehuf-notes/blob/main/LICENSE" target="_blank">MIT License</a></span></div> <div class="buttons"><div title="返回顶部" class="button blur go-to-top iconfont icon-fanhuidingbu" style="display:none;"></div> <div title="去评论" class="button blur go-to-comment iconfont icon-pinglun" style="display:none;"></div> <div title="主题模式" class="button blur theme-mode-but iconfont icon-zhuti"><ul class="select-box" style="display:none;"><li class="iconfont icon-zidong">
+          跟随系统
+        </li><li class="iconfont icon-rijianmoshi">
+          浅色模式
+        </li><li class="iconfont icon-yejianmoshi">
+          深色模式
+        </li><li class="iconfont icon-yuedu">
+          阅读模式
+        </li></ul></div></div> <!----> <!----> <!----></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.3213a207.js" defer></script><script src="/assets/js/2.e2bf2c87.js" defer></script><script src="/assets/js/19.b2cd9a49.js" defer></script>
+  </body>
+</html>
