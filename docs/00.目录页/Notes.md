@@ -16,6 +16,8 @@ permalink: /pages/Notes/
 - [FPGA 01.一次最小的FPGA工程构建-从闪烁到流水](/pages/FPGA_01/)
 - [FPGA 02.按键不是输入信号，而是一段时间——一次关于消抖的记录](/pages/FPGA_02/)
 - [FPGA 03.我与 PWM 的爱恨情仇](/pages/FPGA_03/)
+- [FPGA 04.串口通信](/pages/FPGA_04)
+
 ---
 
 ## Neural Networks 
