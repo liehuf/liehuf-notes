@@ -17,6 +17,8 @@ permalink: /pages/Notes/
 - [FPGA 02.按键不是输入信号，而是一段时间——一次关于消抖的记录](/pages/FPGA_02/)
 - [FPGA 03.我与 PWM 的爱恨情仇](/pages/FPGA_03/)
 - [FPGA 04.串口通信](/pages/FPGA_04/)
+- [FPGA 05.IP 核的基本使用与注意事项](/pages/FPGA_05/)
+- [FPGA 06.PLL 锁相环的认识](/pages/FPGA_06/)
 
 ---
 
