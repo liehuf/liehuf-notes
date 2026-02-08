@@ -19,7 +19,7 @@ permalink: /pages/Notes/
 - [FPGA 04.串口通信](/pages/FPGA_04/)
 - [FPGA 05.IP 核的基本使用与注意事项](/pages/FPGA_05/)
 - [FPGA 06.PLL 锁相环的认识](/pages/FPGA_06/)
-- [FPGA 05.FIFO、ROM、RAM理解](/pages/FPGA_07/)
+- [FPGA 07.FIFO、ROM、RAM理解](/pages/FPGA_07/)
 
 ---
 
