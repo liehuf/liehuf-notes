@@ -33,4 +33,11 @@ permalink: /pages/Notes/
 
 ---
 
+## PCB Lauout
+- [Layout 01.PCB设计的流程概述](/pages/PCB_01/)
+- [Layout 02.阻抗](/pages/PCB_02/)
+- [Layout 03.常用模块的PCB绘制要点](/pages/PCB_03/)
+
+---
+
 **[留言板](/message-board)** 
