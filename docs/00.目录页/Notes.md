@@ -6,6 +6,14 @@ permalink: /pages/Notes/
 
 # 博客笔记
 
+## IC-focused Universal Linux
+- [Linux 01.关于Linux系统本身及其运行原理](/pages/Linux_01/)
+- [Linux 02.Linux的进程管理](/pages/Linux_02/)
+- [Linux 03.Linux的Shell结构理解](/pages/Linux_03/)
+
+
+---
+
 ## Verilog HDL
 - [01.Verilog HDL 时序电路的基本元件设计](/pages/Verilog_01/)
 - [02.Verilog HDL有限状态机（FSM）设计基础](/pages/Verilog_02/)
