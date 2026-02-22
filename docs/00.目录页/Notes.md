@@ -48,5 +48,35 @@ permalink: /pages/Notes/
 - [Layout 03.常用模块的PCB绘制要点](/pages/PCB_03/)
 
 ---
+## Rust
+
+- [00.Rust的基本素养](/pages/Rust_00/)
+- [01.Rust的变量与可变性](/pages/Rust_01/)
+- [02.Rust的数据类型](/pages/Rust_02)
+- [03.Rust的函数和注释](/pages/Rust_03/)
+- [04.Rust的控制流](/pages/Rust_04/)
+- [05.Rust的所有权概念](/pages/Rust_05/)
+- [06.Rust的引用和借用](/pages/Rust_06/)
+- [07.Rust的Slice类型](/pages/Rust_07/)
+- [08.Rust的结构体类型](/pages/Rust_08/)
+- [09.Rust的结构体的打印与调试](pages/Rust_09/)
+- [10.Rust的方法](pages/Rust_10/)
+- [11.Rust的枚举](pages/Rust_11/)
+- [12.Rust的match控制流结构](pages/Rust_12/)
+- [13.Rust的语法糖-iflet](/pages/Rust_13/)
+- [14.Rust的模块系统](/pages/Rust_14/)
+- [15.Rust的Vector](/pages/Rust_15/)
+- [16.Rust的String类型基本原理](/pages/Rust_16/)
+- [17.Rust的HashMap](/pages/Rust_17/)
+
+---
+
+## Advanced Python
+
+- [01.numpy 模块](/pages/Python_01/)
+- [02.pandas 模块](/pages/Python_02/)
+- [03.matplotlib 模块](/pages/Python_03/)
+
+---
 
 **[留言板](/message-board)** 
