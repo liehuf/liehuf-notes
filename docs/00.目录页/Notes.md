@@ -7,10 +7,11 @@ permalink: /pages/Notes/
 # 博客笔记
 
 ## IC-focused Universal Linux
-- [Linux 01.关于Linux系统本身及其运行原理](/pages/Linux_01/)
-- [Linux 02.Linux的进程管理](/pages/Linux_02/)
-- [Linux 03.Linux的Shell结构理解](/pages/Linux_03/)
-- [Linux 04.Linux的文本处理](/pages/Linux_04/)
+- [01.Linux运行原理](/pages/Linux_01/)
+- [02.进程管理](/pages/Linux_02/)
+- [03.Shell结构](/pages/Linux_03/)
+- [04.文本处理](/pages/Linux_04/)
+- [05.Shell编程](/pages/Linux_05/)
 
 ---
 
