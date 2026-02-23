@@ -12,6 +12,7 @@ permalink: /pages/Notes/
 - [03.Shell结构](/pages/Linux_03/)
 - [04.文本处理](/pages/Linux_04/)
 - [05.Shell编程](/pages/Linux_05/)
+- [06.网络通信](/pages/Linux_06/)
 
 ---
 
