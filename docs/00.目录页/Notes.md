@@ -14,6 +14,8 @@ permalink: /pages/Notes/
 - [05.文本处理](/pages/Linux_05/)
 - [06.Shell编程](/pages/Linux_06/)
 - [07.网络通信](/pages/Linux_07/)
+- [08.编译原理](/pages/Linux_08/)
+
 
 ---
 
