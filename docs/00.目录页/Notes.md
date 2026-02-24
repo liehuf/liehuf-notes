@@ -15,7 +15,7 @@ permalink: /pages/Notes/
 - [06.Shell编程](/pages/Linux_06/)
 - [07.网络通信](/pages/Linux_07/)
 - [08.编译原理](/pages/Linux_08/)
-
+- [09.ELF角度下的静态动态链接](/pages/Linux_09/)
 
 ---
 
