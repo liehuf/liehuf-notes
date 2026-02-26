@@ -16,8 +16,8 @@ permalink: /pages/Notes/
 - [07.网络通信](/pages/Linux_07/)
 - [08.编译原理](/pages/Linux_08/)
 - [09.静态、动态链接](/pages/Linux_09/)
-- [10.看二进制](/page/Linux_10/)
-- [11.Makefile及其变量](/page/Linux_11/)
+- [10.看二进制](/pages/Linux_10/)
+- [11.Makefile及其变量](/pages/Linux_11/)
 
 ---
 
@@ -65,10 +65,10 @@ permalink: /pages/Notes/
 - [06.Rust的引用和借用](/pages/Rust_06/)
 - [07.Rust的Slice类型](/pages/Rust_07/)
 - [08.Rust的结构体类型](/pages/Rust_08/)
-- [09.Rust的结构体的打印与调试](pages/Rust_09/)
-- [10.Rust的方法](pages/Rust_10/)
-- [11.Rust的枚举](pages/Rust_11/)
-- [12.Rust的match控制流结构](pages/Rust_12/)
+- [09.Rust的结构体的打印与调试](/pages/Rust_09/)
+- [10.Rust的方法](/pages/Rust_10/)
+- [11.Rust的枚举](/pages/Rust_11/)
+- [12.Rust的match控制流结构](/pages/Rust_12/)
 - [13.Rust的语法糖-iflet](/pages/Rust_13/)
 - [14.Rust的模块系统](/pages/Rust_14/)
 - [15.Rust的Vector](/pages/Rust_15/)
