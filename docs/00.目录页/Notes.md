@@ -18,6 +18,7 @@ permalink: /pages/Notes/
 - [09.静态、动态链接](/pages/Linux_09/)
 - [10.看二进制](/pages/Linux_10/)
 - [11.Makefile及其变量](/pages/Linux_11/)
+- [12.Makefile规则](/pages/Linux_12/)
 
 ---
 
