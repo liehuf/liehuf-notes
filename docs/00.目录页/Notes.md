@@ -19,7 +19,7 @@ permalink: /pages/Notes/
 - [10.看二进制](/pages/Linux_10/)
 - [11.Makefile及其变量](/pages/Linux_11/)
 - [12.Makefile规则](/pages/Linux_12/)
-- [13.Makefile依赖](/pahes/Linux_13/)
+- [13.Makefile依赖](/pages/Linux_13/)
 
 ---
 
