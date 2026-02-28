@@ -21,6 +21,9 @@ permalink: /pages/Notes/
 - [12.Makefile规则](/pages/Linux_12/)
 - [13.Makefile依赖](/pages/Linux_13/)
 - [14.最小CMake](/pages/Linux_14/)
+- [15.包管理](/pages/Linux_15/)
+- [16.日志](/pages/Linux_16/)
+- [17.磁盘管理](/pages/Linux_17/)
 
 ---
 
