@@ -24,6 +24,8 @@ permalink: /pages/Notes/
 - [15.包管理](/pages/Linux_15/)
 - [16.日志](/pages/Linux_16/)
 - [17.磁盘管理](/pages/Linux_17/)
+- [18.主机-客机](/pages/Linux_18/)
+- [19.交叉编译](/pages/Linux_19/)
 
 ---
 
