@@ -6,7 +6,10 @@ permalink: /pages/Notes/
 
 # 博客笔记
 
+**[留言板](/message-board)** 欢迎留言！B站、微信公众号同号，认准**原码纪事**！
+
 ## IC-focused Universal Linux
+- 芯片方向的用户、运维、嵌入式三合一的 **Linux**
 - [01.Linux运行原理](/pages/Linux_01/)
 - [02.文件操作](/pages/Linux_02/)
 - [03.进程管理](/pages/Linux_03/)
@@ -26,16 +29,29 @@ permalink: /pages/Notes/
 - [17.日志](/pages/Linux_17/)
 - [18.磁盘管理](/pages/Linux_18/)
 
+---
+
+## Neural Networks 
+- 研究与IC可交叉的卷积神经网络
+- [NN 01. 关于线性网络的研究和记录](/pages/NN_01/)
+- [NN 02.若干损失函数的研究](/pages/NN_02/)
+- [NN 03.若干激活函数的研究](/pages/NN_03/)
+- [NN 04.卷积和LeNet神经网络](/pages/NN_04/)
+- [NN 05.AlexNet 与使用“块”的神经网络](/pages/NN_05/)
+- [NN 06.并行块和深度神经网络的深究解释](/pages/NN_06/)
 
 ---
 
-## Verilog HDL
+## HDL
+
+### Verilog HDL
+- 硬件描述语言
 - [01.Verilog HDL 时序电路的基本元件设计](/pages/Verilog_01/)
 - [02.Verilog HDL有限状态机（FSM）设计基础](/pages/Verilog_02/)
 - [03.testBench的编写规范](/pages/Verilog_03/)
----
 
-## FPGA
+### FPGA
+- 现场可编程门阵列
 - [FPGA 01.一次最小的FPGA工程构建-从闪烁到流水](/pages/FPGA_01/)
 - [FPGA 02.按键不是输入信号，而是一段时间——一次关于消抖的记录](/pages/FPGA_02/)
 - [FPGA 03.我与 PWM 的爱恨情仇](/pages/FPGA_03/)
@@ -46,24 +62,16 @@ permalink: /pages/Notes/
 
 ---
 
-## Neural Networks 
-- [NN 01. 关于线性网络的研究和记录](/pages/NN_01/)
-- [NN 02.若干损失函数的研究](/pages/NN_02/)
-- [NN 03.若干激活函数的研究](/pages/NN_03/)
-- [NN 04.卷积和LeNet神经网络](/pages/NN_04/)
-- [NN 05.AlexNet 与使用“块”的神经网络](/pages/NN_05/)
-- [NN 06.并行块和深度神经网络的深究解释](/pages/NN_06/)
-
----
-
 ## PCB Lauout
+- PCB 设计
 - [Layout 01.PCB设计的流程概述](/pages/PCB_01/)
 - [Layout 02.阻抗](/pages/PCB_02/)
 - [Layout 03.常用模块的PCB绘制要点](/pages/PCB_03/)
 
 ---
-## Rust
 
+## Rust
+- 现代高效安全的 Rust语言
 - [00.Rust的基本素养](/pages/Rust_00/)
 - [01.Rust的变量与可变性](/pages/Rust_01/)
 - [02.Rust的数据类型](/pages/Rust_02)
@@ -85,12 +93,8 @@ permalink: /pages/Notes/
 
 ---
 
-## Advanced Python
-
+## Python
+- Python 数据分析方面的应用
 - [01.numpy 模块](/pages/Python_01/)
 - [02.pandas 模块](/pages/Python_02/)
 - [03.matplotlib 模块](/pages/Python_03/)
-
----
-
-**[留言板](/message-board)** 

@@ -1,7 +1,7 @@
 ---
 home: true
 heroImage: /img/base/LOGO.png
-tagline: 以工程视角览之技术。
+tagline: 一步一个脚印，遇见不一样的你
 heroText: 原码纪事
 actionText: 开始浏览 →
 actionLink: /pages/Notes/
