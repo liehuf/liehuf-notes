@@ -5,8 +5,13 @@ permalink: /pages/Notes/
 ---
 
 # 博客笔记
-
 **[留言板](/message-board)** 欢迎留言！B站、微信公众号同号，认准**原码纪事**！
+
+**[工程项目](/pages/Projects/)** 欢迎浏览我的项目
+
+**[吐槽](/pages/Teasting/)** 世界上本来没有吐槽，只因为吐的人多了
+
+---
 
 ## IC-focused Universal Linux
 - 芯片方向的用户、运维、嵌入式三合一的 **Linux**
