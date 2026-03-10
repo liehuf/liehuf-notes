@@ -6,4 +6,6 @@ permalink: /pages/Projects/
 
 # 项目
 
+- [01.Orangepi Zero3驱动OLED显示信息](/pages/Project_01/)
+
 **[留言板](/message-board)** 
